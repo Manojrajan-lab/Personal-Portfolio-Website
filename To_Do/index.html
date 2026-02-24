@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern To-Do App</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      transition: 0.3s;
+    }
+
+    .dark {
+      background: #1e1e1e;
+      color: white;
+    }
+
+    .app {
+      background: white;
+      padding: 25px;
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .dark .app {
+      background: #2c2c2c;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #4a90e2;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      margin-bottom: 8px;
+      background: #f0f0f0;
+      border-radius: 6px;
+    }
+
+    .dark li {
+      background: #3a3a3a;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .filters span {
+      cursor: pointer;
+    }
+
+    .task-actions button {
+      background: crimson;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+
+    .edit-btn {
+      background: orange;
+    }
+
+    .footer {
+      margin-top: 10px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="app">
+    <h2>📝 My To-Do List</h2>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Enter a task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="filters">
+      <span onclick="setFilter('all')">All</span>
+      <span onclick="setFilter('active')">Active</span>
+      <span onclick="setFilter('completed')">Completed</span>
+      <span onclick="toggleDarkMode()">🌙</span>
+    </div>
+
+    <div class="footer">
+      <span id="taskCount"></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
